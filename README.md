@@ -1,3 +1,24 @@
+# Examen II · Tours Rincón de la Vieja (C10789)
+
+## Ejecutar
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+touch database/database.sqlite   # en Windows: type nul > database\database.sqlite
+php artisan migrate
+php artisan test                 # las pruebas usan SQLite en memoria
+```
+
+Endpoint: `POST /reservas` con `{ "cliente_id": 1, "items": [ { "salida_id": 1, "cantidad_personas": 2 } ] }`
+
+- Controlador: `app/Http/Controllers/ReservaController.php`
+- Clase de control: `app/Services/ServicioReservas.php`
+- Pruebas: `tests/Feature/ReservaTest.php`
+
+---
+
 <p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
 
 <p align="center">
